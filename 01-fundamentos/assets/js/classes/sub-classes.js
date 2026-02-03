@@ -1,8 +1,3 @@
-// Definición de la clase
-//  Las clases en JavaScript son plantillas para crear objetos.
-// Utilizan la palabra clave 'class' seguida del nombre de la clase.
-
-
 class Persona {
 
     
@@ -51,27 +46,27 @@ class Persona {
 
 }
 
-const spiderMan = new Persona('Peter Parker', 'Spiderman', 'Soy tu amigable vecino Spiderman');
-const ironMan = new Persona('Tony Stark', 'Ironman', 'Yo soy Ironman');
+// Subclase de Persona, hereda de Persona, usa la palabra reservada extends, para heredar todo lo de Persona.
+class Heroe extends Persona {
+    clan = 'Sin clan';
+    constructor(nombre, codigo, frase) {
+        // Llamar al constructor de la clase padre, previo al uso de this.
+        super(nombre, codigo, frase);
+        this.clan = 'Los Avengers';
+    }
+
+    quienSoy() {
+        console.log(`Soy ${this.nombre}, del clan ${this.clan}`);
+        super.quienSoy();
+    }
+
+}
+
+// const spiderMan = new Persona('Peter Parker', 'Spiderman', 'Soy tu amigable vecino Spiderman');
+const spiderMan = new Heroe('Peter Parker', 'Spiderman', 'Soy tu amigable vecino Spiderman');
+console.log(spiderMan);
+spiderMan.quienSoy();
 
 
-// console.log(spiderMan);
-// console.log(ironMan);
 
-// spiderMan.quienSoy();
-// ironMan.quienSoy();
-spiderMan.miFrase();
-// ironMan.miFrase();
-
-spiderMan.comidaFavorita = 'El pastel de cereza de la tía May';
-// console.log(spiderMan.comida);
-
-// Persona._conteo = 2;
-console.log('Conteo estático', Persona._conteo);
-console.log(Persona.conteo);
-Persona.mensaje();
-
-Persona.propiedadExterna = 'Hola mundo';
-console.log(Persona.propiedadExterna);
-console.log(Persona);
 
