@@ -1,3 +1,8 @@
 import './style.css'
+import {App} from './src/todos/app.js'; 
 
-console.log('hola mundo');
+import todoStore from './src/store/todo.store.js';'./src/store/todo.store.js';
+
+todoStore.initStore();
+
+App('#app');
